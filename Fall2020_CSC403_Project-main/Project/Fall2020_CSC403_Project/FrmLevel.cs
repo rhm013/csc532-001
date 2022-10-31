@@ -77,52 +77,94 @@ namespace Fall2020_CSC403_Project {
       // move player
       player.Move();
 
-      // check collision with walls
-      if (HitAWall(player)) {
-        player.MoveBack();
-      }
 
-      // check collision with enemies
-      if (HitAChar(player, enemyPoisonPacket)) {
-        Fight(enemyPoisonPacket);
-      }
-      else if (HitAChar(player, enemyCheeto)) {
-        Fight(enemyCheeto);
-      }
-      if (HitAChar(player, bossKoolaid)) {
-        Fight(bossKoolaid);
-      }
+            // check collision with walls
+
+            if (HitAWall(player))
+            {
+                player.MoveBack();
+            }
+
+            // check collision with enemies
+            if (enemyPoisonPacket.Health < 0 && poisionflag == false)
+            {
+                SoundPlayer simpleSound = new SoundPlayer(Resources.poison);
+                simpleSound.Play();
+                picEnemyPoisonPacket.Enabled = false;
+                picEnemyPoisonPacket.Visible = false;
+                poisionflag = true;
+            }
+            else if (enemyPoisonPacket.Health > 0)
+            {
+                if (HitAChar(player, enemyPoisonPacket))
+                {
+                    Fight(enemyPoisonPacket);
+                }
+            }
+            if (enemyCheeto.Health < 0 && cheetoflag == false)
+            {
+                picEnemyCheeto.Enabled = false;
+                picEnemyCheeto.Visible = false;
+                SoundPlayer simpleSound = new SoundPlayer(Resources.cheeto);
+                simpleSound.Play();
+                cheetoflag = true;
+
+            }
+            else if (enemyCheeto.Health > 0)
+            {
+                if (HitAChar(player, enemyCheeto))
+                {
+                    Fight(enemyCheeto);
+                }
+            }
+            if (bossKoolaid.Health < 0 && bossflag == false)
+            {
+                picBossKoolAid.Enabled = false;
+                picBossKoolAid.Visible = false;
+                SoundPlayer simpleSound = new SoundPlayer(Resources.boss);
+                simpleSound.Play();
+                bossflag = true;
+
+
+            }
+            else if (bossKoolaid.Health > 0)
+            {
+                if (HitAChar(player, bossKoolaid))
+                {
+                    Fight(bossKoolaid);
+                }
+            }
             if (bossKoolaid.Health < 0 && enemyCheeto.Health < 0 && enemyPoisonPacket.Health < 0 && playerflag == false)
-            {
-                Thread.Sleep(4000);
-                SoundPlayer simpleSound = new SoundPlayer(Resources.wona);
-                simpleSound.Play();
-                winlosspopup.Enabled = true;
-                winlosspopup.Visible = true;
-                playerflag = true;
-                restartlabel.Enabled = true;
-                restartlabel.Visible = true;
+      {
+          Thread.Sleep(4000);
+          SoundPlayer simpleSound = new SoundPlayer(Resources.wona);
+          simpleSound.Play();
+          winlosspopup.Enabled = true;
+          winlosspopup.Visible = true;
+          playerflag = true;
+          restartlabel.Enabled = true;
+          restartlabel.Visible = true;
 
 
-            }
+      }
             if (player.Health <= 0 && playerflag == false)
-            {
+      {
 
-                SoundPlayer simpleSound = new SoundPlayer(Resources.losta);
-                simpleSound.Play();
-                this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lost;
-                winlosspopup.Enabled = true;
-                winlosspopup.Visible = true;
-                picPlayer.Visible = false;
-                Thread.Sleep(4000);
-                playerflag = true;
-                restartlabel.Enabled = true;
-                restartlabel.Visible = true;
+          SoundPlayer simpleSound = new SoundPlayer(Resources.losta);
+          simpleSound.Play();
+          this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lost;
+          winlosspopup.Enabled = true;
+          winlosspopup.Visible = true;
+          picPlayer.Visible = false;
+          Thread.Sleep(4000);
+          playerflag = true;
+          restartlabel.Enabled = true;
+          restartlabel.Visible = true;
 
-            }
+      }
 
-            // update player's picture box
-            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+      // update player's picture box
+      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {
