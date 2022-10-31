@@ -33,7 +33,9 @@
       this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
-      this.winlosspopup = new System.Windows.Forms.PictureBox();
+            this.restartlabel = new System.Windows.Forms.Label();
+            this.restartpopup = new System.Windows.Forms.PictureBox();
+            this.winlosspopup = new System.Windows.Forms.PictureBox();
       this.picWall5 = new System.Windows.Forms.PictureBox();
       this.picWall4 = new System.Windows.Forms.PictureBox();
       this.picWall12 = new System.Windows.Forms.PictureBox();
@@ -49,7 +51,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
@@ -111,10 +114,39 @@
       this.picEnemyPoisonPacket.Size = new System.Drawing.Size(63, 96);
       this.picEnemyPoisonPacket.TabIndex = 4;
       this.picEnemyPoisonPacket.TabStop = false;
-      // 
-      // winlosspopup
-      // 
-      this.winlosspopup.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // restartlabel
+            // 
+            this.restartlabel.AutoSize = true;
+            this.restartlabel.Enabled = false;
+            this.restartlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.restartlabel.Location = new System.Drawing.Point(886, 1);
+            this.restartlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.restartlabel.Name = "restartlabel";
+            this.restartlabel.Size = new System.Drawing.Size(255, 25);
+            this.restartlabel.TabIndex = 21;
+            this.restartlabel.Text = "Press R for Game Restart";
+            this.restartlabel.Visible = false;
+            // 
+            // restartpopup
+            // 
+            this.restartpopup.BackColor = System.Drawing.Color.Transparent;
+            this.restartpopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.restartwindow;
+            this.restartpopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.restartpopup.Enabled = false;
+            this.restartpopup.Location = new System.Drawing.Point(397, 274);
+            this.restartpopup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.restartpopup.Name = "restartpopup";
+            this.restartpopup.Size = new System.Drawing.Size(406, 219);
+            this.restartpopup.TabIndex = 22;
+            this.restartpopup.TabStop = false;
+            this.restartpopup.Visible = false;
+            this.restartpopup.Click += new System.EventHandler(this.restart_Click);
+            // 
+            // winlosspopup
+            // 
+            this.winlosspopup.BackColor = System.Drawing.Color.Transparent;
       this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.won;
       this.winlosspopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
       this.winlosspopup.Enabled = false;
@@ -299,6 +331,8 @@
       this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
       this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
       this.ClientSize = new System.Drawing.Size(1176, 726);
+      this.Controls.Add(this.restartpopup);
+      this.Controls.Add(this.restartlabel);
       this.Controls.Add(this.picWall11);
       this.Controls.Add(this.picWall2);
       this.Controls.Add(this.picWall8);
@@ -330,6 +364,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
@@ -344,6 +379,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
       this.ResumeLayout(false);
+      this.PerformLayout();
       this.PerformLayout();
 
     }
@@ -370,7 +406,9 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-    private System.Windows.Forms.PictureBox winlosspopup;
+        private System.Windows.Forms.Label restartlabel;
+        private System.Windows.Forms.PictureBox restartpopup;
+        private System.Windows.Forms.PictureBox winlosspopup;
     }
 }
 

@@ -14,12 +14,13 @@ namespace Fall2020_CSC403_Project {
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
-        private bool poisionflag = false;
-        private bool cheetoflag = false;
-        private bool bossflag = false;
-        private bool playerflag = false;
-        private int charactorchoice;
-        private DateTime timeBegin;
+    private bool poisionflag = false;
+    private bool cheetoflag = false;
+    private bool bossflag = false;
+    private bool playerflag = false;
+    private int charactorchoice;
+    private bool restrictkeys = false;
+    private DateTime timeBegin;
     private FrmBattle frmBattle;
 
     public FrmLevel() {
@@ -99,7 +100,8 @@ namespace Fall2020_CSC403_Project {
                 winlosspopup.Enabled = true;
                 winlosspopup.Visible = true;
                 playerflag = true;
-               
+                restartlabel.Enabled = true;
+                restartlabel.Visible = true;
 
 
             }
@@ -114,7 +116,8 @@ namespace Fall2020_CSC403_Project {
                 picPlayer.Visible = false;
                 Thread.Sleep(4000);
                 playerflag = true;
-                
+                restartlabel.Enabled = true;
+                restartlabel.Visible = true;
 
             }
 
@@ -165,15 +168,48 @@ namespace Fall2020_CSC403_Project {
         case Keys.Down:
           player.GoDown();
           break;
+        case Keys.R:
+            Restart(sender, e);
 
-        default:
+            break;
+                default:
           player.ResetMoveSpeed();
           break;
       }
     }
+     private void Restart(object sender, KeyEventArgs e)
+     {
+         picPlayer.Visible = false;
+         picPlayer.Enabled = false;
+         restartlabel.Enabled = false;
+         restartlabel.Visible = false;
+         restartpopup.Enabled = true;
+         restartpopup.Visible = true;
+         winlosspopup.Visible = false;
+         winlosspopup.Enabled = false;
+         restrictkeys = true;
+     }
+     private void restart_Click(object sender, EventArgs e)
+     {
 
-    private void lblInGameTime_Click(object sender, EventArgs e) {
+         MouseEventArgs me = (MouseEventArgs)e;
+         Point coordinates = me.Location;
+         if (241 < coordinates.X && coordinates.X < 349 && 138 < coordinates.Y && coordinates.Y < 187)
+         {
+             Application.Restart();
 
-    }
+         }
+         else if (58 < coordinates.X && coordinates.X < 136 && 140 < coordinates.Y && coordinates.Y < 187)
+         {
+             restartpopup.Enabled = false;
+             restartpopup.Visible = false;
+             picPlayer.Visible = true;
+             picPlayer.Enabled = true;
+             restrictkeys = false;
+         }
+     }
+        private void lblInGameTime_Click(object sender, EventArgs e) {
+
+        }
   }
 }

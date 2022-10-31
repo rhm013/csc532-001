@@ -133,5 +133,8 @@
   <ItemGroup>
     <None Include="data\wona.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\restartwindow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
