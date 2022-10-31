@@ -145,5 +145,23 @@
   <ItemGroup>
     <None Include="data\poison.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char1ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\char2ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\cloth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\playeric.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

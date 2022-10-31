@@ -10,8 +10,8 @@ namespace Fall2020_CSC403_Project {
     public static FrmBattle instance = null;
     private Enemy enemy;
     private Player player;
-
-    private FrmBattle() {
+        private static int charbattle;
+        private FrmBattle() {
       InitializeComponent();
       player = Game.player;
     }
@@ -22,16 +22,30 @@ namespace Fall2020_CSC403_Project {
       picEnemy.Refresh();
       BackColor = enemy.Color;
       picBossBattle.Visible = false;
-
-      // Observer pattern
-      enemy.AttackEvent += PlayerDamage;
+            getplayer();
+            // Observer pattern
+            enemy.AttackEvent += PlayerDamage;
       player.AttackEvent += EnemyDamage;
 
       // show health
       UpdateHealthBars();
     }
-
-    public void SetupForBossBattle() {
+        private void getplayer()
+        {
+            switch (charbattle)
+            {
+                case 1:
+                    picPlayer.BackgroundImage = Properties.Resources.char1;
+                    break;
+                case 2:
+                    picPlayer.BackgroundImage = Properties.Resources.char2;
+                    break;
+                case 0:
+                    picPlayer.BackgroundImage = Properties.Resources.player;
+                    break;
+            }
+        }
+        public void SetupForBossBattle() {
       picBossBattle.Location = Point.Empty;
       picBossBattle.Size = ClientSize;
       picBossBattle.Visible = true;
@@ -42,8 +56,10 @@ namespace Fall2020_CSC403_Project {
       tmrFinalBattle.Enabled = true;
     }
 
-    public static FrmBattle GetInstance(Enemy enemy) {
-      if (instance == null) {
+     public static FrmBattle GetInstance(Enemy enemy, int charactorchoice)
+      {
+            charbattle = charactorchoice;
+            if (instance == null) {
         instance = new FrmBattle();
         instance.enemy = enemy;
         instance.Setup();
