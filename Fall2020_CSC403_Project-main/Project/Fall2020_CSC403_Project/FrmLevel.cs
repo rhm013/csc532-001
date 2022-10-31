@@ -1,6 +1,9 @@
 ﻿using Fall2020_CSC403_Project.code;
+using Fall2020_CSC403_Project.Properties;
 using System;
 using System.Drawing;
+using System.Media;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Fall2020_CSC403_Project {
@@ -11,8 +14,12 @@ namespace Fall2020_CSC403_Project {
     private Enemy bossKoolaid;
     private Enemy enemyCheeto;
     private Character[] walls;
-
-    private DateTime timeBegin;
+        private bool poisionflag = false;
+        private bool cheetoflag = false;
+        private bool bossflag = false;
+        private bool playerflag = false;
+        private int charactorchoice;
+        private DateTime timeBegin;
     private FrmBattle frmBattle;
 
     public FrmLevel() {
@@ -84,9 +91,35 @@ namespace Fall2020_CSC403_Project {
       if (HitAChar(player, bossKoolaid)) {
         Fight(bossKoolaid);
       }
+            if (bossKoolaid.Health < 0 && enemyCheeto.Health < 0 && enemyPoisonPacket.Health < 0 && playerflag == false)
+            {
+                Thread.Sleep(4000);
+                SoundPlayer simpleSound = new SoundPlayer(Resources.wona);
+                simpleSound.Play();
+                winlosspopup.Enabled = true;
+                winlosspopup.Visible = true;
+                playerflag = true;
+               
 
-      // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+
+            }
+            if (player.Health <= 0 && playerflag == false)
+            {
+
+                SoundPlayer simpleSound = new SoundPlayer(Resources.losta);
+                simpleSound.Play();
+                this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lost;
+                winlosspopup.Enabled = true;
+                winlosspopup.Visible = true;
+                picPlayer.Visible = false;
+                Thread.Sleep(4000);
+                playerflag = true;
+                
+
+            }
+
+            // update player's picture box
+            picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {

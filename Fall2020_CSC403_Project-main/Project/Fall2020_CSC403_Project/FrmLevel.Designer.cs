@@ -33,6 +33,7 @@
       this.picWall3 = new System.Windows.Forms.PictureBox();
       this.picBossKoolAid = new System.Windows.Forms.PictureBox();
       this.picPlayer = new System.Windows.Forms.PictureBox();
+      this.winlosspopup = new System.Windows.Forms.PictureBox();
       this.picWall5 = new System.Windows.Forms.PictureBox();
       this.picWall4 = new System.Windows.Forms.PictureBox();
       this.picWall12 = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyCheeto)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picEnemyPoisonPacket)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).BeginInit();
@@ -109,6 +111,21 @@
       this.picEnemyPoisonPacket.Size = new System.Drawing.Size(63, 96);
       this.picEnemyPoisonPacket.TabIndex = 4;
       this.picEnemyPoisonPacket.TabStop = false;
+      // 
+      // winlosspopup
+      // 
+      this.winlosspopup.BackColor = System.Drawing.Color.Transparent;
+      this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.won;
+      this.winlosspopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.winlosspopup.Enabled = false;
+      this.winlosspopup.Location = new System.Drawing.Point(377, 278);
+      this.winlosspopup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.winlosspopup.Name = "winlosspopup";
+      this.winlosspopup.Size = new System.Drawing.Size(446, 141);
+      this.winlosspopup.TabIndex = 20;
+      this.winlosspopup.TabStop = false;
+      this.winlosspopup.Visible = false;
+      
       // 
       // picWall3
       // 
@@ -300,6 +317,7 @@
       this.Controls.Add(this.picWall3);
       this.Controls.Add(this.picBossKoolAid);
       this.Controls.Add(this.picPlayer);
+      this.Controls.Add(this.winlosspopup);
       this.DoubleBuffered = true;
       this.Name = "FrmLevel";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -312,6 +330,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.picWall3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall5)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.picWall12)).EndInit();
@@ -351,6 +370,7 @@
     private System.Windows.Forms.PictureBox picWall1;
     private System.Windows.Forms.PictureBox picWall2;
     private System.Windows.Forms.PictureBox picWall11;
-  }
+    private System.Windows.Forms.PictureBox winlosspopup;
+    }
 }
 

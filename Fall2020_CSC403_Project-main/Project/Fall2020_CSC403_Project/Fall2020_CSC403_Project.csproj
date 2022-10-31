@@ -121,5 +121,17 @@
       <Name>MyGameLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\lost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\won.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\losta.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\wona.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
