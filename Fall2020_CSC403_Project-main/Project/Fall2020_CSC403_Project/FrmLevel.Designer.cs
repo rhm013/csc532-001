@@ -231,7 +231,7 @@
             this.picPlayer.Location = new System.Drawing.Point(159, 628);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(72, 130);
+            this.picPlayer.Size = new System.Drawing.Size(103, 154);
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
             // 
