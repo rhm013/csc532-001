@@ -22,6 +22,7 @@ namespace Fall2020_CSC403_Project {
     private bool restrictkeys = false;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
+    private int shifter=1;
 
     public FrmLevel() {
       InitializeComponent();
@@ -212,14 +213,24 @@ namespace Fall2020_CSC403_Project {
           break;
         case Keys.R:
             Restart(sender, e);
-
             break;
-                default:
+        case Keys.S:
+                    changeSpeed();
+                    break;
+        default:
           player.ResetMoveSpeed();
           break;
       }
     }
-     private void Restart(object sender, KeyEventArgs e)
+
+        private void changeSpeed()
+        {
+            shifter *= -1;
+            if (shifter == -1) { player.GO_INC = 6; }
+            else    { player.GO_INC = 3;}
+        }
+
+        private void Restart(object sender, KeyEventArgs e)
      {
          picPlayer.Visible = false;
          picPlayer.Enabled = false;
