@@ -163,5 +163,8 @@
   <ItemGroup>
     <None Include="data\playeric.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\racingcar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
