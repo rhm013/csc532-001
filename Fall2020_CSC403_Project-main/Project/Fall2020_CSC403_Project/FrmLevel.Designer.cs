@@ -30,10 +30,9 @@
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.restartlabel = new System.Windows.Forms.Label();
-            this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.weaponbox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.restartpopup = new System.Windows.Forms.PictureBox();
             this.foxicon = new System.Windows.Forms.PictureBox();
@@ -59,10 +58,9 @@
             this.winlosspopup = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1.SuspendLayout();
-            this.playerlayout.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weaponbox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foxicon)).BeginInit();
@@ -144,15 +142,15 @@
             this.restartlabel.Text = "Press R for Game Restart";
             this.restartlabel.Visible = false;
             // 
-            // playerlayout
+            // flowLayoutPanel2
             // 
-            this.playerlayout.Controls.Add(this.picPlayer);
-            this.playerlayout.Controls.Add(this.weaponbox);
-            this.playerlayout.Controls.Add(this.pictureBox1);
-            this.playerlayout.Location = new System.Drawing.Point(147, 567);
-            this.playerlayout.Name = "playerlayout";
-            this.playerlayout.Size = new System.Drawing.Size(211, 168);
-            this.playerlayout.TabIndex = 23;
+            this.flowLayoutPanel2.Controls.Add(this.picPlayer);
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(147, 567);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 230);
+            this.flowLayoutPanel2.TabIndex = 23;
             // 
             // pictureBox2
             // 
@@ -168,29 +166,19 @@
             // 
             this.picPlayer.BackColor = System.Drawing.Color.Transparent;
             this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
-            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.picPlayer.Location = new System.Drawing.Point(4, 4);
             this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(80, 106);
+            this.picPlayer.Size = new System.Drawing.Size(166, 154);
             this.picPlayer.TabIndex = 0;
             this.picPlayer.TabStop = false;
-            // 
-            // weaponbox
-            // 
-            this.weaponbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.machinegun;
-            this.weaponbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.weaponbox.Location = new System.Drawing.Point(91, 3);
-            this.weaponbox.Name = "weaponbox";
-            this.weaponbox.Size = new System.Drawing.Size(100, 74);
-            this.weaponbox.TabIndex = 25;
-            this.weaponbox.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.racingcar;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 165);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(197, 50);
             this.pictureBox1.TabIndex = 24;
@@ -477,7 +465,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1568, 894);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.playerlayout);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.restartpopup);
             this.Controls.Add(this.restartlabel);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -509,10 +497,9 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.playerlayout.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weaponbox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foxicon)).EndInit();
@@ -574,10 +561,9 @@
         private System.Windows.Forms.Label restartlabel;
         private System.Windows.Forms.PictureBox restartpopup;
         private System.Windows.Forms.PictureBox winlosspopup;
-        private System.Windows.Forms.FlowLayoutPanel playerlayout;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox weaponbox;
     }
 }
 
