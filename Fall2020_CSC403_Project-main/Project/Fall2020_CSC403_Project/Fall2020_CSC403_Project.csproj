@@ -166,5 +166,8 @@
   <ItemGroup>
     <None Include="data\racingcar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\startstop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
