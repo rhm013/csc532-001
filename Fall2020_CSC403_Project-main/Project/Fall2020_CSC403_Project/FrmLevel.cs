@@ -283,7 +283,7 @@ namespace Fall2020_CSC403_Project {
         private void changeSpeed()
         {
             shifter *= -1;
-            if (shifter == -1) { player.GO_INC = 6; }
+            if (shifter == -1) { player.GO_INC = 4; }
             else    { player.GO_INC = 3;}
         }
 
@@ -424,6 +424,7 @@ namespace Fall2020_CSC403_Project {
             this.playerlayout.Controls.Add(this.vehiclehold);
             this.vehiclehold.BackgroundImage = Properties.Resources.racingcar;
             vehiclechoice = 3;
+            player.GO_INC = 8;
             carcommon();
         }
         private void carcommon()
@@ -441,6 +442,7 @@ namespace Fall2020_CSC403_Project {
             this.vehiclehold.BackgroundImage = Properties.Resources.motorbike;
             vehiclechoice = 2;
             carcommon();
+            player.GO_INC = 5;
 
 
         }
