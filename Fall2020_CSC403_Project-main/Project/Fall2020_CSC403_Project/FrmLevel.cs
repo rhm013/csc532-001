@@ -23,8 +23,9 @@ namespace Fall2020_CSC403_Project {
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private int shifter=1;
+        private int weaponchoice;
 
-    public FrmLevel() {
+        public FrmLevel() {
       InitializeComponent();
     }
 
@@ -32,7 +33,7 @@ namespace Fall2020_CSC403_Project {
       const int PADDING = 7;
       const int NUM_WALLS = 13;
 
-      player = new Player(CreatePosition(picPlayer), CreateCollider(picPlayer, PADDING));
+      player = new Player(CreatePositionPlayer(playerlayout), CreateColliderPlayer(playerlayout, PADDING));
       bossKoolaid = new Enemy(CreatePosition(picBossKoolAid), CreateCollider(picBossKoolAid, PADDING));
       enemyPoisonPacket = new Enemy(CreatePosition(picEnemyPoisonPacket), CreateCollider(picEnemyPoisonPacket, PADDING));
       enemyCheeto = new Enemy(CreatePosition(picEnemyCheeto), CreateCollider(picEnemyCheeto, PADDING));
@@ -55,6 +56,15 @@ namespace Fall2020_CSC403_Project {
       timeBegin = DateTime.Now;
     }
 
+    private Vector2 CreatePositionPlayer(FlowLayoutPanel pic)
+    {
+        return new Vector2(pic.Location.X, pic.Location.Y);
+    }
+    private Collider CreateColliderPlayer(FlowLayoutPanel pic, int padding)
+    {
+            Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
+            return new Collider(rect);
+        }
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
     }
@@ -156,7 +166,7 @@ namespace Fall2020_CSC403_Project {
           this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lost;
           winlosspopup.Enabled = true;
           winlosspopup.Visible = true;
-          picPlayer.Visible = false;
+          playerlayout.Visible = false;
           Thread.Sleep(4000);
           playerflag = true;
           restartlabel.Enabled = true;
@@ -165,7 +175,7 @@ namespace Fall2020_CSC403_Project {
       }
 
       // update player's picture box
-      picPlayer.Location = new Point((int)player.Position.x, (int)player.Position.y);
+      playerlayout.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
 
     private bool HitAWall(Character c) {
@@ -217,11 +227,20 @@ namespace Fall2020_CSC403_Project {
         case Keys.S:
                     changeSpeed();
                     break;
+                case Keys.D:
+                    Dropweapon();
+                    break;
         default:
           player.ResetMoveSpeed();
           break;
       }
     }
+
+        private void Dropweapon()
+        {
+          weaponhold.Visible = false;
+            weaponhold.Enabled = false;
+        }
 
         private void changeSpeed()
         {
@@ -232,8 +251,8 @@ namespace Fall2020_CSC403_Project {
 
         private void Restart(object sender, KeyEventArgs e)
      {
-         picPlayer.Visible = false;
-         picPlayer.Enabled = false;
+         playerlayout.Visible = false;
+         playerlayout.Enabled = false;
          restartlabel.Enabled = false;
          restartlabel.Visible = false;
          restartpopup.Enabled = true;
@@ -295,13 +314,48 @@ namespace Fall2020_CSC403_Project {
          {
              restartpopup.Enabled = false;
              restartpopup.Visible = false;
-             picPlayer.Visible = true;
-             picPlayer.Enabled = true;
+             playerlayout.Visible = true;
+             playerlayout.Enabled = true;
              restrictkeys = false;
          }
      }
         private void lblInGameTime_Click(object sender, EventArgs e) {
 
         }
-  }
+
+        private void weaponsbox_Click(object sender, EventArgs e)
+        {
+            if (weaponsflow.Visible != true)
+            {
+                weaponsflow.Visible = true;
+                weaponsflow.Enabled = true;
+            }
+            else
+            {
+                weaponsflow.Visible = false;
+                weaponsflow.Enabled = false;
+            }
+        }
+
+        private void machinegunpic_Click(object sender, EventArgs e)
+        {
+            this.weaponhold.BackgroundImage = Properties.Resources.machinegun;
+            weaponchoice = 2;
+            weaponhold.Visible = true;
+            weaponhold.Enabled = true;
+            //this.playerlayout.Controls.Add(this.playerweaponflow);
+            this.playerweaponflow.Controls.Add(this.weaponhold);
+        }
+
+        private void ak47_Click(object sender, EventArgs e)
+        {
+            this.weaponhold.BackgroundImage = Properties.Resources.ak47;
+            weaponchoice = 3;
+            weaponhold.Visible = true;
+            weaponhold.Enabled = true;
+            //this.playerlayout.Controls.Add(this.playerweaponflow);
+            this.playerweaponflow.Controls.Add(this.weaponhold);
+           // this.playerlayout.Controls.Add(this.vehiclehold);
+        }
+    }
 }

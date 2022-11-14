@@ -172,5 +172,11 @@
   <ItemGroup>
     <None Include="data\machinegun.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\ak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\storagebox.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

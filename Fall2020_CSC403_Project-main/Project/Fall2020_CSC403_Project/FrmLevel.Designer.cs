@@ -29,16 +29,21 @@
             this.tmrUpdateInGameTime = new System.Windows.Forms.Timer(this.components);
             this.tmrPlayerMove = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.restartlabel = new System.Windows.Forms.Label();
-            this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.picPlayer = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.restartpopup = new System.Windows.Forms.PictureBox();
             this.foxicon = new System.Windows.Forms.PictureBox();
             this.playericon = new System.Windows.Forms.PictureBox();
             this.amoungicon = new System.Windows.Forms.PictureBox();
+            this.restartlabel = new System.Windows.Forms.Label();
+            this.playerlayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.playerweaponflow = new System.Windows.Forms.FlowLayoutPanel();
+            this.picPlayer = new System.Windows.Forms.PictureBox();
+            this.vehiclehold = new System.Windows.Forms.PictureBox();
+            this.weaponhold = new System.Windows.Forms.PictureBox();
+            this.weaponsflow = new System.Windows.Forms.FlowLayoutPanel();
+            this.machinegunpic = new System.Windows.Forms.PictureBox();
+            this.ak47pic = new System.Windows.Forms.PictureBox();
+            this.weaponsbox = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.restartpopup = new System.Windows.Forms.PictureBox();
             this.charactericon = new System.Windows.Forms.PictureBox();
             this.picWall11 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
@@ -58,16 +63,25 @@
             this.picBossKoolAid = new System.Windows.Forms.PictureBox();
             this.winlosspopup = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.garage = new System.Windows.Forms.PictureBox();
+            this.dricechoice = new System.Windows.Forms.FlowLayoutPanel();
+            this.racingcar = new System.Windows.Forms.PictureBox();
+            this.bike = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
-            this.playerlayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foxicon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playericon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amoungicon)).BeginInit();
+            this.playerlayout.SuspendLayout();
+            this.playerweaponflow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclehold)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponhold)).BeginInit();
+            this.weaponsflow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.machinegunpic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ak47pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponsbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactericon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
@@ -87,6 +101,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.garage)).BeginInit();
+            this.dricechoice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.racingcar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bike)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInGameTime
@@ -131,86 +149,6 @@
             this.flowLayoutPanel1.TabIndex = 19;
             this.flowLayoutPanel1.Visible = false;
             // 
-            // restartlabel
-            // 
-            this.restartlabel.AutoSize = true;
-            this.restartlabel.Enabled = false;
-            this.restartlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restartlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.restartlabel.Location = new System.Drawing.Point(1181, 1);
-            this.restartlabel.Name = "restartlabel";
-            this.restartlabel.Size = new System.Drawing.Size(327, 29);
-            this.restartlabel.TabIndex = 21;
-            this.restartlabel.Text = "Press R for Game Restart";
-            this.restartlabel.Visible = false;
-            // 
-            // playerlayout
-            // 
-            this.playerlayout.Controls.Add(this.picPlayer);
-            this.playerlayout.Controls.Add(this.pictureBox3);
-            this.playerlayout.Controls.Add(this.pictureBox1);
-            this.playerlayout.Location = new System.Drawing.Point(147, 567);
-            this.playerlayout.Name = "playerlayout";
-            this.playerlayout.Size = new System.Drawing.Size(237, 164);
-            this.playerlayout.TabIndex = 23;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.startstop;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(651, 398);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(266, 173);
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
-            // 
-            // picPlayer
-            // 
-            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
-            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPlayer.Location = new System.Drawing.Point(4, 4);
-            this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
-            this.picPlayer.Name = "picPlayer";
-            this.picPlayer.Size = new System.Drawing.Size(104, 97);
-            this.picPlayer.TabIndex = 0;
-            this.picPlayer.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.machinegun1;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(115, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.racingcar;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 108);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 50);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
-            // restartpopup
-            // 
-            this.restartpopup.BackColor = System.Drawing.Color.Transparent;
-            this.restartpopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.restartwindow;
-            this.restartpopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.restartpopup.Enabled = false;
-            this.restartpopup.Location = new System.Drawing.Point(529, 337);
-            this.restartpopup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.restartpopup.Name = "restartpopup";
-            this.restartpopup.Size = new System.Drawing.Size(541, 270);
-            this.restartpopup.TabIndex = 22;
-            this.restartpopup.TabStop = false;
-            this.restartpopup.Visible = false;
-            this.restartpopup.Click += new System.EventHandler(this.restart_Click);
-            // 
             // foxicon
             // 
             this.foxicon.BackColor = System.Drawing.Color.Transparent;
@@ -249,6 +187,152 @@
             this.amoungicon.TabIndex = 0;
             this.amoungicon.TabStop = false;
             this.amoungicon.Click += new System.EventHandler(this.amoung_Click);
+            // 
+            // restartlabel
+            // 
+            this.restartlabel.AutoSize = true;
+            this.restartlabel.Enabled = false;
+            this.restartlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartlabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.restartlabel.Location = new System.Drawing.Point(1181, 1);
+            this.restartlabel.Name = "restartlabel";
+            this.restartlabel.Size = new System.Drawing.Size(327, 29);
+            this.restartlabel.TabIndex = 21;
+            this.restartlabel.Text = "Press R for Game Restart";
+            this.restartlabel.Visible = false;
+            // 
+            // playerlayout
+            // 
+            this.playerlayout.AutoSize = true;
+            this.playerlayout.Controls.Add(this.playerweaponflow);
+            this.playerlayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.playerlayout.Location = new System.Drawing.Point(147, 567);
+            this.playerlayout.Name = "playerlayout";
+            this.playerlayout.Size = new System.Drawing.Size(120, 113);
+            this.playerlayout.TabIndex = 23;
+            // 
+            // playerweaponflow
+            // 
+            this.playerweaponflow.AutoSize = true;
+            this.playerweaponflow.Controls.Add(this.picPlayer);
+            this.playerweaponflow.Location = new System.Drawing.Point(3, 3);
+            this.playerweaponflow.Name = "playerweaponflow";
+            this.playerweaponflow.Size = new System.Drawing.Size(112, 105);
+            this.playerweaponflow.TabIndex = 25;
+            // 
+            // picPlayer
+            // 
+            this.picPlayer.BackColor = System.Drawing.Color.Transparent;
+            this.picPlayer.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.player;
+            this.picPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPlayer.Location = new System.Drawing.Point(4, 4);
+            this.picPlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.picPlayer.Name = "picPlayer";
+            this.picPlayer.Size = new System.Drawing.Size(104, 97);
+            this.picPlayer.TabIndex = 0;
+            this.picPlayer.TabStop = false;
+            // 
+            // vehiclehold
+            // 
+            this.vehiclehold.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.racingcar;
+            this.vehiclehold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.vehiclehold.Enabled = false;
+            this.vehiclehold.Location = new System.Drawing.Point(3, 114);
+            this.vehiclehold.Name = "vehiclehold";
+            this.vehiclehold.Size = new System.Drawing.Size(197, 50);
+            this.vehiclehold.TabIndex = 24;
+            this.vehiclehold.TabStop = false;
+            this.vehiclehold.Visible = false;
+            // 
+            // weaponhold
+            // 
+            this.weaponhold.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.machinegun1;
+            this.weaponhold.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponhold.Enabled = false;
+            this.weaponhold.Location = new System.Drawing.Point(115, 3);
+            this.weaponhold.Name = "weaponhold";
+            this.weaponhold.Size = new System.Drawing.Size(100, 50);
+            this.weaponhold.TabIndex = 25;
+            this.weaponhold.TabStop = false;
+            this.weaponhold.Visible = false;
+            // 
+            // weaponsflow
+            // 
+            this.weaponsflow.BackColor = System.Drawing.Color.Transparent;
+            this.weaponsflow.Controls.Add(this.machinegunpic);
+            this.weaponsflow.Controls.Add(this.ak47pic);
+            this.weaponsflow.Enabled = false;
+            this.weaponsflow.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.weaponsflow.Location = new System.Drawing.Point(3, 638);
+            this.weaponsflow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.weaponsflow.Name = "weaponsflow";
+            this.weaponsflow.Size = new System.Drawing.Size(109, 159);
+            this.weaponsflow.TabIndex = 20;
+            this.weaponsflow.Visible = false;
+            // 
+            // machinegunpic
+            // 
+            this.machinegunpic.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.machinegun1;
+            this.machinegunpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.machinegunpic.Location = new System.Drawing.Point(3, 76);
+            this.machinegunpic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.machinegunpic.Name = "machinegunpic";
+            this.machinegunpic.Size = new System.Drawing.Size(97, 81);
+            this.machinegunpic.TabIndex = 5;
+            this.machinegunpic.TabStop = false;
+            this.machinegunpic.Click += new System.EventHandler(this.machinegunpic_Click);
+            // 
+            // ak47pic
+            // 
+            this.ak47pic.BackColor = System.Drawing.Color.Transparent;
+            this.ak47pic.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.ak471;
+            this.ak47pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ak47pic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ak47pic.Location = new System.Drawing.Point(3, 7);
+            this.ak47pic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ak47pic.Name = "ak47pic";
+            this.ak47pic.Size = new System.Drawing.Size(97, 65);
+            this.ak47pic.TabIndex = 0;
+            this.ak47pic.TabStop = false;
+            this.ak47pic.Click += new System.EventHandler(this.ak47_Click);
+            // 
+            // weaponsbox
+            // 
+            this.weaponsbox.BackColor = System.Drawing.Color.Transparent;
+            this.weaponsbox.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.storagebox;
+            this.weaponsbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.weaponsbox.Location = new System.Drawing.Point(3, 789);
+            this.weaponsbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.weaponsbox.Name = "weaponsbox";
+            this.weaponsbox.Size = new System.Drawing.Size(109, 82);
+            this.weaponsbox.TabIndex = 25;
+            this.weaponsbox.TabStop = false;
+            this.weaponsbox.Click += new System.EventHandler(this.weaponsbox_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.startstop;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(651, 398);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(266, 173);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
+            // restartpopup
+            // 
+            this.restartpopup.BackColor = System.Drawing.Color.Transparent;
+            this.restartpopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.restartwindow;
+            this.restartpopup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.restartpopup.Enabled = false;
+            this.restartpopup.Location = new System.Drawing.Point(529, 337);
+            this.restartpopup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.restartpopup.Name = "restartpopup";
+            this.restartpopup.Size = new System.Drawing.Size(541, 270);
+            this.restartpopup.TabIndex = 22;
+            this.restartpopup.TabStop = false;
+            this.restartpopup.Visible = false;
+            this.restartpopup.Click += new System.EventHandler(this.restart_Click);
             // 
             // charactericon
             // 
@@ -295,7 +379,7 @@
             this.picWall8.Location = new System.Drawing.Point(1457, 337);
             this.picWall8.Margin = new System.Windows.Forms.Padding(4);
             this.picWall8.Name = "picWall8";
-            this.picWall8.Size = new System.Drawing.Size(109, 553);
+            this.picWall8.Size = new System.Drawing.Size(109, 534);
             this.picWall8.TabIndex = 15;
             this.picWall8.TabStop = false;
             // 
@@ -400,10 +484,10 @@
             this.picWall5.BackColor = System.Drawing.Color.Transparent;
             this.picWall5.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall5.Location = new System.Drawing.Point(3, 807);
+            this.picWall5.Location = new System.Drawing.Point(111, 807);
             this.picWall5.Margin = new System.Windows.Forms.Padding(4);
             this.picWall5.Name = "picWall5";
-            this.picWall5.Size = new System.Drawing.Size(477, 82);
+            this.picWall5.Size = new System.Drawing.Size(369, 82);
             this.picWall5.TabIndex = 6;
             this.picWall5.TabStop = false;
             // 
@@ -469,15 +553,69 @@
             this.winlosspopup.TabStop = false;
             this.winlosspopup.Visible = false;
             // 
+            // garage
+            // 
+            this.garage.BackColor = System.Drawing.Color.Transparent;
+            this.garage.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.storagebox;
+            this.garage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.garage.Location = new System.Drawing.Point(1457, 789);
+            this.garage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.garage.Name = "garage";
+            this.garage.Size = new System.Drawing.Size(109, 82);
+            this.garage.TabIndex = 26;
+            this.garage.TabStop = false;
+            // 
+            // dricechoice
+            // 
+            this.dricechoice.BackColor = System.Drawing.Color.Transparent;
+            this.dricechoice.Controls.Add(this.racingcar);
+            this.dricechoice.Controls.Add(this.bike);
+            this.dricechoice.Enabled = false;
+            this.dricechoice.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.dricechoice.Location = new System.Drawing.Point(1457, 636);
+            this.dricechoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dricechoice.Name = "dricechoice";
+            this.dricechoice.Size = new System.Drawing.Size(109, 159);
+            this.dricechoice.TabIndex = 27;
+            this.dricechoice.Visible = false;
+            // 
+            // racingcar
+            // 
+            this.racingcar.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.machinegun1;
+            this.racingcar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.racingcar.Location = new System.Drawing.Point(3, 76);
+            this.racingcar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.racingcar.Name = "racingcar";
+            this.racingcar.Size = new System.Drawing.Size(97, 81);
+            this.racingcar.TabIndex = 5;
+            this.racingcar.TabStop = false;
+            // 
+            // bike
+            // 
+            this.bike.BackColor = System.Drawing.Color.Transparent;
+            this.bike.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.ak471;
+            this.bike.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bike.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bike.Location = new System.Drawing.Point(3, 7);
+            this.bike.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bike.Name = "bike";
+            this.bike.Size = new System.Drawing.Size(97, 65);
+            this.bike.TabIndex = 0;
+            this.bike.TabStop = false;
+            // 
             // FrmLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1568, 894);
+            this.ClientSize = new System.Drawing.Size(1568, 882);
+            this.Controls.Add(this.dricechoice);
+            this.Controls.Add(this.garage);
+            this.Controls.Add(this.weaponsbox);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.playerlayout);
+            this.Controls.Add(this.weaponsflow);
             this.Controls.Add(this.restartpopup);
             this.Controls.Add(this.restartlabel);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -509,15 +647,21 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmLevel_KeyUp);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.playerlayout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.foxicon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playericon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amoungicon)).EndInit();
+            this.playerlayout.ResumeLayout(false);
+            this.playerlayout.PerformLayout();
+            this.playerweaponflow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclehold)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponhold)).EndInit();
+            this.weaponsflow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.machinegunpic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ak47pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponsbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.restartpopup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactericon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
@@ -537,6 +681,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBossKoolAid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winlosspopup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.garage)).EndInit();
+            this.dricechoice.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.racingcar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bike)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,9 +723,18 @@
         private System.Windows.Forms.PictureBox restartpopup;
         private System.Windows.Forms.PictureBox winlosspopup;
         private System.Windows.Forms.FlowLayoutPanel playerlayout;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox vehiclehold;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox weaponhold;
+        private System.Windows.Forms.PictureBox weaponsbox;
+        private System.Windows.Forms.FlowLayoutPanel weaponsflow;
+        private System.Windows.Forms.PictureBox machinegunpic;
+        private System.Windows.Forms.PictureBox ak47pic;
+        private System.Windows.Forms.FlowLayoutPanel playerweaponflow;
+        private System.Windows.Forms.PictureBox garage;
+        private System.Windows.Forms.FlowLayoutPanel dricechoice;
+        private System.Windows.Forms.PictureBox racingcar;
+        private System.Windows.Forms.PictureBox bike;
     }
 }
 
