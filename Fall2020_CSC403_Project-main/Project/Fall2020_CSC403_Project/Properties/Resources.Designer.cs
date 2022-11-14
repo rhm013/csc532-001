@@ -200,6 +200,16 @@ namespace Fall2020_CSC403_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap garage {
+            get {
+                object obj = ResourceManager.GetObject("garage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lost {
             get {
                 object obj = ResourceManager.GetObject("lost", resourceCulture);
@@ -242,6 +252,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.Drawing.Bitmap machinegun2 {
             get {
                 object obj = ResourceManager.GetObject("machinegun2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap motorbike {
+            get {
+                object obj = ResourceManager.GetObject("motorbike", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

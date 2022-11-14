@@ -24,13 +24,14 @@ namespace Fall2020_CSC403_Project {
     private FrmBattle frmBattle;
     private int shifter=1;
         private int weaponchoice;
-
+        private int vehiclechoice;
+        const int PADDING = 7;
         public FrmLevel() {
       InitializeComponent();
     }
 
     private void FrmLevel_Load(object sender, EventArgs e) {
-      const int PADDING = 7;
+      
       const int NUM_WALLS = 13;
 
       player = new Player(CreatePositionPlayer(playerlayout), CreateColliderPlayer(playerlayout, PADDING));
@@ -230,16 +231,29 @@ namespace Fall2020_CSC403_Project {
                 case Keys.D:
                     Dropweapon();
                     break;
-        default:
+                case Keys.Q:
+                    Dropvehicle();
+                    break;
+                default:
           player.ResetMoveSpeed();
           break;
       }
     }
 
+        private void Dropvehicle()
+        {
+            weaponhold.Visible = false;
+            weaponhold.Enabled = false;
+            this.playerlayout.Controls.Remove(this.vehiclehold);
+            player = new Player(CreatePositionPlayer(playerlayout), CreateColliderPlayer(playerlayout, PADDING));
+        }
+
         private void Dropweapon()
         {
           weaponhold.Visible = false;
             weaponhold.Enabled = false;
+            this.playerweaponflow.Controls.Remove(this.weaponhold);
+            player = new Player(CreatePositionPlayer(playerlayout), CreateColliderPlayer(playerlayout, PADDING));
         }
 
         private void changeSpeed()
@@ -344,9 +358,17 @@ namespace Fall2020_CSC403_Project {
             weaponhold.Visible = true;
             weaponhold.Enabled = true;
             //this.playerlayout.Controls.Add(this.playerweaponflow);
-            this.playerweaponflow.Controls.Add(this.weaponhold);
-        }
+            weaponcommon();
 
+
+        }
+        private void weaponcommon()
+        {
+            this.playerweaponflow.Controls.Add(this.weaponhold);
+            restartlabel.Enabled = true;
+            restartlabel.Enabled = true;
+            restartlabel.Text = "Press D to Quite Vehicle";
+        }
         private void ak47_Click(object sender, EventArgs e)
         {
             this.weaponhold.BackgroundImage = Properties.Resources.ak47;
@@ -354,8 +376,49 @@ namespace Fall2020_CSC403_Project {
             weaponhold.Visible = true;
             weaponhold.Enabled = true;
             //this.playerlayout.Controls.Add(this.playerweaponflow);
-            this.playerweaponflow.Controls.Add(this.weaponhold);
-           // this.playerlayout.Controls.Add(this.vehiclehold);
+            weaponcommon();
+
+        }
+
+        private void garage_Click(object sender, EventArgs e)
+        {
+            if (drivechoice.Visible != true)
+            {
+                drivechoice.Visible = true;
+                drivechoice.Enabled = true;
+            }
+            else
+            {
+                drivechoice.Visible = false;
+                drivechoice.Enabled = false;
+            }
+
+        }
+
+        private void racingcar_Click(object sender, EventArgs e)
+        {
+            this.playerlayout.Controls.Add(this.vehiclehold);
+            this.vehiclehold.BackgroundImage = Properties.Resources.racingcar;
+            vehiclechoice = 3;
+            carcommon();
+        }
+        private void carcommon()
+        {
+            restartlabel.Enabled = true;
+            restartlabel.Enabled = true;
+            vehiclehold.Visible = true;
+            vehiclehold.Enabled = true;
+            restartlabel.Text = "Press Q to Quite Vehicle";
+
+        }
+        private void bike_Click(object sender, EventArgs e)
+        {
+            this.playerlayout.Controls.Add(this.vehiclehold);
+            this.vehiclehold.BackgroundImage = Properties.Resources.motorbike;
+            vehiclechoice = 2;
+            carcommon();
+
+
         }
     }
 }
