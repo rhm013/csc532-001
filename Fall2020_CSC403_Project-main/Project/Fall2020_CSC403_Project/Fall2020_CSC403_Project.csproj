@@ -193,5 +193,11 @@
   <ItemGroup>
     <None Include="data\ak47pla.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\charak47.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\machinchar2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

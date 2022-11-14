@@ -42,6 +42,23 @@ namespace Fall2020_CSC403_Project {
                     break;
                 case 0:
                     picPlayer.BackgroundImage = Properties.Resources.player;
+
+                    break;
+                case 3:
+                    picPlayer.BackgroundImage = Properties.Resources.ak47pla;
+
+                    break;
+                case 4:
+                    picPlayer.BackgroundImage = Properties.Resources.machinegunpla;
+
+                    break;
+                case 5:
+                    picPlayer.BackgroundImage = Properties.Resources.charak47;
+
+                    break;
+                case 6:
+                    picPlayer.BackgroundImage = Properties.Resources.machinchar2;
+
                     break;
             }
         }
@@ -56,8 +73,8 @@ namespace Fall2020_CSC403_Project {
       tmrFinalBattle.Enabled = true;
     }
 
-     public static FrmBattle GetInstance(Enemy enemy, int charactorchoice)
-      {
+    public static FrmBattle GetInstance(Enemy enemy, int charactorchoice)
+    {
             charbattle = charactorchoice;
             if (instance == null) {
         instance = new FrmBattle();
@@ -80,10 +97,24 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void btnAttack_Click(object sender, EventArgs e) {
-      player.OnAttack(-4);
+            if (charbattle == 3 || charbattle == 5)
+            {
+                player.OnAttack(-4);
+            }
+            else if (charbattle == 4 || charbattle == 6)
+            {
+                player.OnAttack(-8);
+            }
+            else
+            {
+                player.OnAttack(-2);
+
+            }
+            
       if (enemy.Health > 0) {
-        enemy.OnAttack(-2);
-      }
+                enemy.OnAttack(-4);
+
+            }
 
       UpdateHealthBars();
       if (player.Health <= 0 || enemy.Health <= 0) {

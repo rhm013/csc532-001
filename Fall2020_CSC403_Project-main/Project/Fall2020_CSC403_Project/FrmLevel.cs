@@ -18,17 +18,17 @@ namespace Fall2020_CSC403_Project {
     private bool cheetoflag = false;
     private bool bossflag = false;
     private bool playerflag = false;
-    private int charactorchoice;
+    private int charactorchoice=0;
     private bool restrictkeys = false;
     private DateTime timeBegin;
     private FrmBattle frmBattle;
     private int shifter=1;
-        private int weaponchoice;
-        private int vehiclechoice;
-        private bool pause=true;
-        const int PADDING = 7;
-        private int scores;
-        public FrmLevel() {
+    private int weaponchoice;
+    private int vehiclechoice;
+    private bool pause=true;
+    const int PADDING = 7;
+    private int scores;
+    public FrmLevel() {
       InitializeComponent();
     }
 
@@ -65,9 +65,9 @@ namespace Fall2020_CSC403_Project {
     }
     private Collider CreateColliderPlayer(FlowLayoutPanel pic, int padding)
     {
-            Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
-            return new Collider(rect);
-        }
+       Rectangle rect = new Rectangle(pic.Location, new Size(pic.Size.Width - padding, pic.Size.Height - padding));
+       return new Collider(rect);
+    }
     private Vector2 CreatePosition(PictureBox pic) {
       return new Vector2(pic.Location.X, pic.Location.Y);
     }
@@ -86,20 +86,14 @@ namespace Fall2020_CSC403_Project {
       string time = span.ToString(@"hh\:mm\:ss");
       lblInGameTime.Text = "Time: " + time.ToString();
     }
-
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
             if(pause == false) { player.Move(); }
-      // move player
-     
-
-
+            // move player
             // check collision with walls
-
             if (HitAWall(player))
             {
                 player.MoveBack();
             }
-
             // check collision with enemies
             if (enemyPoisonPacket.Health < 0 && poisionflag == false)
             {
@@ -175,6 +169,7 @@ namespace Fall2020_CSC403_Project {
           winlosspopup.Enabled = true;
           winlosspopup.Visible = true;
           playerlayout.Visible = false;
+          playerlayout.Enabled = false;
           Thread.Sleep(4000);
           playerflag = true;
           restartlabel.Enabled = true;
@@ -202,6 +197,7 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void Fight(Enemy enemy) {
+            characterfit();
       player.ResetMoveSpeed();
       player.MoveBack();
       frmBattle = FrmBattle.GetInstance(enemy, charactorchoice);
@@ -212,7 +208,33 @@ namespace Fall2020_CSC403_Project {
       }
     }
 
-    private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
+        private void characterfit()
+        {
+            if(charactorchoice==0)
+            {
+                if (weaponchoice == 2)
+                {
+                    charactorchoice=6;
+                }
+                else if (weaponchoice == 3)
+                {
+                    charactorchoice = 5;
+                }
+            }
+            else if(charactorchoice == 2)
+            {
+                if (weaponchoice == 2)
+                {
+                    charactorchoice = 6;
+                }
+                else if (weaponchoice == 3)
+                {
+                    charactorchoice = 5;
+                }
+            }
+        }
+
+        private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
         case Keys.Left:
                     scores += 1;
@@ -237,21 +259,21 @@ namespace Fall2020_CSC403_Project {
             Restart(sender, e);
             break;
         case Keys.S:
-                    changeSpeed();
-                    break;
-                case Keys.D:
-                    Dropweapon();
-                    break;
-                case Keys.Q:
-                    Dropvehicle();
-                    break;
-                case Keys.M:
-                    pause = true;
-                    Menu();
-                    break;
-                default:
-          player.ResetMoveSpeed();
-          break;
+            changeSpeed();
+            break;
+        case Keys.D:
+            Dropweapon();
+            break;
+        case Keys.Q:
+            Dropvehicle();
+            break;
+        case Keys.M:
+            pause = true;
+            Menu();
+            break;
+        default:
+              player.ResetMoveSpeed();
+            break;
       }
     }
 
@@ -398,9 +420,7 @@ namespace Fall2020_CSC403_Project {
         private void weaponcommon()
         {
             this.playerweaponflow.Controls.Add(this.weaponhold);
-            restartlabel.Enabled = true;
-            restartlabel.Enabled = true;
-            restartlabel.Text = "Press D to Quite Vehicle";
+           
         }
         private void ak47_Click(object sender, EventArgs e)
         {
@@ -434,23 +454,15 @@ namespace Fall2020_CSC403_Project {
             this.vehiclehold.BackgroundImage = Properties.Resources.racingcar;
             vehiclechoice = 3;
             player.GO_INC = 8;
-            carcommon();
-        }
-        private void carcommon()
-        {
-            restartlabel.Enabled = true;
-            restartlabel.Enabled = true;
-            vehiclehold.Visible = true;
-            vehiclehold.Enabled = true;
-            restartlabel.Text = "Press Q to Quite Vehicle";
 
         }
+       
         private void bike_Click(object sender, EventArgs e)
         {
             this.playerlayout.Controls.Add(this.vehiclehold);
             this.vehiclehold.BackgroundImage = Properties.Resources.motorbike;
             vehiclechoice = 2;
-            carcommon();
+           
             player.GO_INC = 5;
 
 

@@ -150,6 +150,16 @@ namespace Fall2020_CSC403_Project.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap charak47 {
+            get {
+                object obj = ResourceManager.GetObject("charak47", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream cheeto {
@@ -233,6 +243,16 @@ namespace Fall2020_CSC403_Project.Properties {
         internal static System.IO.UnmanagedMemoryStream losta {
             get {
                 return ResourceManager.GetStream("losta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap machinchar2 {
+            get {
+                object obj = ResourceManager.GetObject("machinchar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
