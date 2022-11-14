@@ -34,6 +34,7 @@
             this.playerweaponflow = new System.Windows.Forms.FlowLayoutPanel();
             this.weaponsflow = new System.Windows.Forms.FlowLayoutPanel();
             this.drivechoice = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.racingcar = new System.Windows.Forms.PictureBox();
             this.bike = new System.Windows.Forms.PictureBox();
             this.garage = new System.Windows.Forms.PictureBox();
@@ -67,7 +68,6 @@
             this.vehiclehold = new System.Windows.Forms.PictureBox();
             this.weaponhold = new System.Windows.Forms.PictureBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.playerlayout.SuspendLayout();
             this.playerweaponflow.SuspendLayout();
@@ -212,6 +212,19 @@
             this.drivechoice.TabIndex = 27;
             this.drivechoice.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(611, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(327, 29);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Press R for Game Restart";
+            this.label1.Visible = false;
+            // 
             // racingcar
             // 
             this.racingcar.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.racingcar;
@@ -266,15 +279,14 @@
             // 
             // playcontrolmenu
             // 
-            this.playcontrolmenu.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.startstop;
+            this.playcontrolmenu.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.menucontrol;
             this.playcontrolmenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.playcontrolmenu.Enabled = false;
-            this.playcontrolmenu.Location = new System.Drawing.Point(651, 398);
+            this.playcontrolmenu.Location = new System.Drawing.Point(503, 268);
             this.playcontrolmenu.Name = "playcontrolmenu";
-            this.playcontrolmenu.Size = new System.Drawing.Size(266, 173);
+            this.playcontrolmenu.Size = new System.Drawing.Size(549, 382);
             this.playcontrolmenu.TabIndex = 24;
             this.playcontrolmenu.TabStop = false;
-            this.playcontrolmenu.Visible = false;
+            this.playcontrolmenu.Click += new System.EventHandler(this.playcontrolmenu_Click_1);
             // 
             // picPlayer
             // 
@@ -610,19 +622,6 @@
             this.weaponhold.TabIndex = 25;
             this.weaponhold.TabStop = false;
             this.weaponhold.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(611, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 29);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Press R for Game Restart";
-            this.label1.Visible = false;
             // 
             // FrmLevel
             // 

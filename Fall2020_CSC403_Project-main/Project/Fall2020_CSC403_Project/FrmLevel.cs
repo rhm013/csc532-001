@@ -25,6 +25,7 @@ namespace Fall2020_CSC403_Project {
     private int shifter=1;
         private int weaponchoice;
         private int vehiclechoice;
+        private bool pause=true;
         const int PADDING = 7;
         public FrmLevel() {
       InitializeComponent();
@@ -86,8 +87,9 @@ namespace Fall2020_CSC403_Project {
     }
 
     private void tmrPlayerMove_Tick(object sender, EventArgs e) {
+            if(pause == false) { player.Move(); }
       // move player
-      player.Move();
+     
 
 
             // check collision with walls
@@ -234,11 +236,33 @@ namespace Fall2020_CSC403_Project {
                 case Keys.Q:
                     Dropvehicle();
                     break;
+                case Keys.M:
+                    pause = true;
+                    Menu();
+                    break;
                 default:
           player.ResetMoveSpeed();
           break;
       }
     }
+
+        private void Menu()
+        {
+           
+            if (playcontrolmenu.Visible != true)
+            {
+                playcontrolmenu.Enabled = true;
+                playcontrolmenu.Visible = true;
+            }
+            else
+            {
+                playcontrolmenu.Enabled = false;
+                playcontrolmenu.Visible = false;
+
+            }
+        }
+
+         
 
         private void Dropvehicle()
         {
@@ -419,6 +443,22 @@ namespace Fall2020_CSC403_Project {
             carcommon();
 
 
+        }
+
+
+        private void playcontrolmenu_Click_1(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            Point coordinates = me.Location;
+            if (123 < coordinates.X && coordinates.X < 291 && 180 < coordinates.Y && coordinates.Y < 226)
+            {
+                pause = false;
+                Menu();
+            }
+            else if (119 < coordinates.X && coordinates.X < 290 && 242 < coordinates.Y && coordinates.Y < 285)
+            {
+                this.Close();
+            }
         }
     }
 }
