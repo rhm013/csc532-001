@@ -27,6 +27,7 @@ namespace Fall2020_CSC403_Project {
         private int vehiclechoice;
         private bool pause=true;
         const int PADDING = 7;
+        private int scores;
         public FrmLevel() {
       InitializeComponent();
     }
@@ -102,6 +103,7 @@ namespace Fall2020_CSC403_Project {
             // check collision with enemies
             if (enemyPoisonPacket.Health < 0 && poisionflag == false)
             {
+                scores += 20;
                 SoundPlayer simpleSound = new SoundPlayer(Resources.poison);
                 simpleSound.Play();
                 picEnemyPoisonPacket.Enabled = false;
@@ -117,6 +119,7 @@ namespace Fall2020_CSC403_Project {
             }
             if (enemyCheeto.Health < 0 && cheetoflag == false)
             {
+                scores += 30;
                 picEnemyCheeto.Enabled = false;
                 picEnemyCheeto.Visible = false;
                 SoundPlayer simpleSound = new SoundPlayer(Resources.cheeto);
@@ -133,6 +136,7 @@ namespace Fall2020_CSC403_Project {
             }
             if (bossKoolaid.Health < 0 && bossflag == false)
             {
+                scores += 40;
                 picBossKoolAid.Enabled = false;
                 picBossKoolAid.Visible = false;
                 SoundPlayer simpleSound = new SoundPlayer(Resources.boss);
@@ -148,8 +152,9 @@ namespace Fall2020_CSC403_Project {
                     Fight(bossKoolaid);
                 }
             }
-            if (bossKoolaid.Health < 0 && enemyCheeto.Health < 0 && enemyPoisonPacket.Health < 0 && playerflag == false)
+      if (bossKoolaid.Health < 0 && enemyCheeto.Health < 0 && enemyPoisonPacket.Health < 0 && playerflag == false)
       {
+                scores += 60;
           Thread.Sleep(4000);
           SoundPlayer simpleSound = new SoundPlayer(Resources.wona);
           simpleSound.Play();
@@ -161,10 +166,10 @@ namespace Fall2020_CSC403_Project {
 
 
       }
-            if (player.Health <= 0 && playerflag == false)
+      if (player.Health <= 0 && playerflag == false)
       {
-
-          SoundPlayer simpleSound = new SoundPlayer(Resources.losta);
+                scores = 0;
+              SoundPlayer simpleSound = new SoundPlayer(Resources.losta);
           simpleSound.Play();
           this.winlosspopup.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.lost;
           winlosspopup.Enabled = true;
@@ -176,7 +181,7 @@ namespace Fall2020_CSC403_Project {
           restartlabel.Visible = true;
 
       }
-
+            Scoreboard.Text = "Score Board >>>" + scores;
       // update player's picture box
       playerlayout.Location = new Point((int)player.Position.x, (int)player.Position.y);
     }
@@ -210,19 +215,23 @@ namespace Fall2020_CSC403_Project {
     private void FrmLevel_KeyDown(object sender, KeyEventArgs e) {
       switch (e.KeyCode) {
         case Keys.Left:
+                    scores += 1;
           player.GoLeft();
           break;
 
         case Keys.Right:
-          player.GoRight();
+                    scores += 1;
+                    player.GoRight();
           break;
 
         case Keys.Up:
-          player.GoUp();
+                    scores += 1;
+                    player.GoUp();
           break;
 
         case Keys.Down:
-          player.GoDown();
+                    scores += 1;
+                    player.GoDown();
           break;
         case Keys.R:
             Restart(sender, e);

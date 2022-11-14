@@ -34,7 +34,7 @@
             this.playerweaponflow = new System.Windows.Forms.FlowLayoutPanel();
             this.weaponsflow = new System.Windows.Forms.FlowLayoutPanel();
             this.drivechoice = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Scoreboard = new System.Windows.Forms.Label();
             this.racingcar = new System.Windows.Forms.PictureBox();
             this.bike = new System.Windows.Forms.PictureBox();
             this.garage = new System.Windows.Forms.PictureBox();
@@ -212,18 +212,16 @@
             this.drivechoice.TabIndex = 27;
             this.drivechoice.Visible = false;
             // 
-            // label1
+            // Scoreboard
             // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(611, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 29);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Press R for Game Restart";
-            this.label1.Visible = false;
+            this.Scoreboard.AutoSize = true;
+            this.Scoreboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoreboard.ForeColor = System.Drawing.Color.Orange;
+            this.Scoreboard.Location = new System.Drawing.Point(611, 1);
+            this.Scoreboard.Name = "Scoreboard";
+            this.Scoreboard.Size = new System.Drawing.Size(72, 29);
+            this.Scoreboard.TabIndex = 28;
+            this.Scoreboard.Text = "label";
             // 
             // racingcar
             // 
@@ -506,10 +504,10 @@
             this.picWall12.BackColor = System.Drawing.Color.Transparent;
             this.picWall12.BackgroundImage = global::Fall2020_CSC403_Project.Properties.Resources.wall;
             this.picWall12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picWall12.Location = new System.Drawing.Point(1186, 489);
+            this.picWall12.Location = new System.Drawing.Point(1117, 489);
             this.picWall12.Margin = new System.Windows.Forms.Padding(4);
             this.picWall12.Name = "picWall12";
-            this.picWall12.Size = new System.Drawing.Size(272, 91);
+            this.picWall12.Size = new System.Drawing.Size(341, 118);
             this.picWall12.TabIndex = 8;
             this.picWall12.TabStop = false;
             // 
@@ -630,7 +628,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1568, 898);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Scoreboard);
             this.Controls.Add(this.drivechoice);
             this.Controls.Add(this.garage);
             this.Controls.Add(this.weaponsbox);
@@ -755,7 +753,7 @@
         private System.Windows.Forms.FlowLayoutPanel drivechoice;
         private System.Windows.Forms.PictureBox racingcar;
         private System.Windows.Forms.PictureBox bike;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Scoreboard;
     }
 }
 
