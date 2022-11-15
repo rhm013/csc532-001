@@ -297,8 +297,8 @@ namespace Fall2020_CSC403_Project {
 
         private void Dropvehicle()
         {
-            weaponhold.Visible = false;
-            weaponhold.Enabled = false;
+            vehiclehold.Visible = false;
+            vehiclehold.Enabled = false;
             this.playerlayout.Controls.Remove(this.vehiclehold);
             player = new Player(CreatePositionPlayer(playerlayout), CreateColliderPlayer(playerlayout, PADDING));
         }
@@ -452,6 +452,8 @@ namespace Fall2020_CSC403_Project {
         {
             this.playerlayout.Controls.Add(this.vehiclehold);
             this.vehiclehold.BackgroundImage = Properties.Resources.racingcar;
+            vehiclehold.Visible = true;
+            vehiclehold.Enabled = true; 
             vehiclechoice = 3;
             player.GO_INC = 8;
 
@@ -462,7 +464,8 @@ namespace Fall2020_CSC403_Project {
             this.playerlayout.Controls.Add(this.vehiclehold);
             this.vehiclehold.BackgroundImage = Properties.Resources.motorbike;
             vehiclechoice = 2;
-           
+           vehiclehold.Visible=true;
+            vehiclehold.Enabled=true;
             player.GO_INC = 5;
 
 
